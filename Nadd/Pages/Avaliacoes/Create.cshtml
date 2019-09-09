@@ -1,0 +1,98 @@
+﻿@page
+@model Nadd.Pages.Avaliacoes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Avaliacao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.DisciplinaId" class="control-label"></label>
+                <select asp-for="Avaliacao.DisciplinaId" class ="form-control" asp-items="ViewBag.DisciplinaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.DataInicioAvaliacao" class="control-label"></label>
+                <input asp-for="Avaliacao.DataInicioAvaliacao" class="form-control" />
+                <span asp-validation-for="Avaliacao.DataInicioAvaliacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.DataConclusaoAvaliacao" class="control-label"></label>
+                <input asp-for="Avaliacao.DataConclusaoAvaliacao" class="form-control" />
+                <span asp-validation-for="Avaliacao.DataConclusaoAvaliacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.ValorProvaExplicito" class="control-label"></label>
+                <input asp-for="Avaliacao.ValorProvaExplicito" class="form-control" />
+                <span asp-validation-for="Avaliacao.ValorProvaExplicito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.ValorQuestaoExplicito" class="control-label"></label>
+                <input asp-for="Avaliacao.ValorQuestaoExplicito" class="form-control" />
+                <span asp-validation-for="Avaliacao.ValorQuestaoExplicito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.SomatorioValoresQuestoes" class="control-label"></label>
+                <input asp-for="Avaliacao.SomatorioValoresQuestoes" class="form-control" />
+                <span asp-validation-for="Avaliacao.SomatorioValoresQuestoes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.ReferenciasBibliograficas" class="control-label"></label>
+                <input asp-for="Avaliacao.ReferenciasBibliograficas" class="form-control" />
+                <span asp-validation-for="Avaliacao.ReferenciasBibliograficas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.MultiplaEscolhaDiscursiva" class="control-label"></label>
+                <input asp-for="Avaliacao.MultiplaEscolhaDiscursiva" class="form-control" />
+                <span asp-validation-for="Avaliacao.MultiplaEscolhaDiscursiva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.ValorTotalProva" class="control-label"></label>
+                <input asp-for="Avaliacao.ValorTotalProva" class="form-control" />
+                <span asp-validation-for="Avaliacao.ValorTotalProva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.NumeroQuestoes" class="control-label"></label>
+                <input asp-for="Avaliacao.NumeroQuestoes" class="form-control" />
+                <span asp-validation-for="Avaliacao.NumeroQuestoes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.EquilibrioDistruibacaoValorQuestao" class="control-label"></label>
+                <input asp-for="Avaliacao.EquilibrioDistruibacaoValorQuestao" class="form-control" />
+                <span asp-validation-for="Avaliacao.EquilibrioDistruibacaoValorQuestao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.Diversificacao" class="control-label"></label>
+                <input asp-for="Avaliacao.Diversificacao" class="form-control" />
+                <span asp-validation-for="Avaliacao.Diversificacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.QuestaoContextualizada" class="control-label"></label>
+                <input asp-for="Avaliacao.QuestaoContextualizada" class="form-control" />
+                <span asp-validation-for="Avaliacao.QuestaoContextualizada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avaliacao.Observacoes" class="control-label"></label>
+                <input asp-for="Avaliacao.Observacoes" class="form-control" />
+                <span asp-validation-for="Avaliacao.Observacoes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

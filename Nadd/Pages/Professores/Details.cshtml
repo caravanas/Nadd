@@ -1,0 +1,49 @@
+﻿@page
+@model Nadd.Pages.Professores.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Professor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Professor.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Professor.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Professor.Endereco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Professor.Endereco)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Professor.Telefone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Professor.Telefone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Professor.Celular)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Professor.Celular)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Professor.Cpf)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Professor.Cpf)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Professor.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,55 @@
+﻿@page
+@model Nadd.Pages.Disciplinas.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Disciplina</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Disciplina.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disciplina.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disciplina.CargaHoraria)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disciplina.CargaHoraria)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disciplina.Periodo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disciplina.Periodo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disciplina.Ano)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disciplina.Ano)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disciplina.Curso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disciplina.Curso.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disciplina.Professor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disciplina.Professor.Nome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Disciplina.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

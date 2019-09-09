@@ -1,0 +1,58 @@
+﻿@page
+@model Nadd.Pages.Disciplinas.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Disciplina</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Disciplina.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disciplina.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disciplina.CargaHoraria)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disciplina.CargaHoraria)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disciplina.Periodo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disciplina.Periodo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disciplina.Ano)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disciplina.Ano)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disciplina.Curso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disciplina.Curso.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disciplina.Professor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disciplina.Professor.Nome)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Disciplina.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

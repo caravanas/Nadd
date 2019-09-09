@@ -1,0 +1,114 @@
+﻿@page
+@model Nadd.Pages.Avaliacoes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].Disciplina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].DataInicioAvaliacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].DataConclusaoAvaliacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].ValorProvaExplicito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].ValorQuestaoExplicito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].SomatorioValoresQuestoes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].ReferenciasBibliograficas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].MultiplaEscolhaDiscursiva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].ValorTotalProva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].NumeroQuestoes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].EquilibrioDistruibacaoValorQuestao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].Diversificacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].QuestaoContextualizada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao[0].Observacoes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Avaliacao) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disciplina.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInicioAvaliacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataConclusaoAvaliacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorProvaExplicito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorQuestaoExplicito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SomatorioValoresQuestoes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReferenciasBibliograficas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MultiplaEscolhaDiscursiva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotalProva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroQuestoes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EquilibrioDistruibacaoValorQuestao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diversificacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestaoContextualizada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacoes)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

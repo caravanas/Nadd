@@ -1,0 +1,52 @@
+﻿@page
+@model Nadd.Pages.Questoes.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Questao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Questao.questao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Questao.questao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Questao.contexto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Questao.contexto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Questao.clareza)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Questao.clareza)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Questao.complexidade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Questao.complexidade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Questao.Avaliacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Questao.Avaliacao.Id)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Questao.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

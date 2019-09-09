@@ -1,0 +1,103 @@
+﻿@page
+@model Nadd.Pages.Avaliacoes.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Avaliacao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.Disciplina)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.Disciplina.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.DataInicioAvaliacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.DataInicioAvaliacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.DataConclusaoAvaliacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.DataConclusaoAvaliacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.ValorProvaExplicito)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.ValorProvaExplicito)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.ValorQuestaoExplicito)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.ValorQuestaoExplicito)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.SomatorioValoresQuestoes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.SomatorioValoresQuestoes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.ReferenciasBibliograficas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.ReferenciasBibliograficas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.MultiplaEscolhaDiscursiva)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.MultiplaEscolhaDiscursiva)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.ValorTotalProva)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.ValorTotalProva)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.NumeroQuestoes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.NumeroQuestoes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.EquilibrioDistruibacaoValorQuestao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.EquilibrioDistruibacaoValorQuestao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.Diversificacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.Diversificacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.QuestaoContextualizada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.QuestaoContextualizada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao.Observacoes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao.Observacoes)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Avaliacao.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
