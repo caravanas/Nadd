@@ -1,5 +1,5 @@
 ﻿@page
-@model Nadd.Pages.Avaliacoes.CreateModel
+@model   Nadd.Pages.Avaliacoes.CreateModel 
 
 @{
     ViewData["Title"] = "Create";
@@ -9,13 +9,14 @@
 
 <h4>Avaliacao</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
+
+<form method="post">
+    <div class="row">
+        <div class="col-md-4">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Avaliacao.DisciplinaId" class="control-label"></label>
-                <select asp-for="Avaliacao.DisciplinaId" class ="form-control" asp-items="ViewBag.DisciplinaId"></select>
+                <select asp-for="Avaliacao.DisciplinaId" class="form-control" asp-items="ViewBag.DisciplinaId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Avaliacao.DataInicioAvaliacao" class="control-label"></label>
@@ -82,13 +83,42 @@
                 <input asp-for="Avaliacao.Observacoes" class="form-control" />
                 <span asp-validation-for="Avaliacao.Observacoes" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
-    </div>
-</div>
 
+
+        </div>
+    </div>
+    <div class="accomp-multi-field-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Numero/Letra da Questão</th>
+                    <th>Contexto da Questão</th>
+                    <th>Clareza da Questão</th>
+                    <th>Complixidade da Questão</th>
+                    <th>Remover</th>
+                </tr>
+            </thead>
+            <tbody class="accomp-multi-fields">
+                <tr class="multi-field">
+                    <td> <input name="FormFields[0].questao" type="text" value=""></td>
+                    <td> <input name="FormFields[0].contexto" min="0" max="10" type="number" value=""></td>
+                    <td> <input name="FormFields[0].clareza" min="0" max="10" type="number" value=""></td>
+                    <td> <input name="FormFields[0].complexidade" min="0" max="10" type="number" value=""></td>
+                    <td> <button type="button" class="remove-field">X</button></td>
+                </tr>
+
+            </tbody>
+            <tr>
+                <th><button type="button" class="add-field btn btn-xs btn-primary addclr"><i class="fa fa-plus"></i> Adicionar Questão</button> </th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-default" />
+    </div>
+
+</form>
 <div>
     <a asp-page="Index">Back to List</a>
 </div>
@@ -96,3 +126,29 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+<script src="~/lib/jquery/dist/jquery.min.js" type="text/javascript"></script>
+<script>
+    console.log('teste');
+    $('.accomp-multi-field-wrapper').each(function () {
+        var $wrapper = $('.accomp-multi-fields', this);
+        $(".add-field", $(this)).click(function (e) {
+            var $len = $('.multi-field', $wrapper).length;
+            $('.multi-field:first-child', $wrapper).clone(false, true).appendTo($wrapper).find('select,input,span').val('').each(function () {
+                $(this).attr('name', $(this).attr('name').replace('\[0\]', '\[' + $len + '\]'));
+            });
+
+            $(document).on("click", '.multi-field .remove-field', function () {
+                if ($('.multi-field', $wrapper).length > 1) {
+                    $(this).closest('tr').remove();
+                    //
+                    $('.multi-field', $wrapper).each(function (indx) {
+                        $(this).find('input,select,span').each(function () {
+                            $(this).attr('name', $(this).attr('name').replace(/\d+/g, indx));
+
+                        })
+                    })
+                }
+            });
+        });
+    });
+</script>

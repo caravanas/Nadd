@@ -86,12 +86,14 @@ namespace Nadd.Controllers
         [HttpPost]
         public async Task<IActionResult> PostAvaliacao([FromBody] Avaliacao avaliacao)
         {
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
             _context.Avaliacao.Add(avaliacao);
+
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetAvaliacao", new { id = avaliacao.Id }, avaliacao);
